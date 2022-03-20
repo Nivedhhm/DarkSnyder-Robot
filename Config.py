@@ -23,7 +23,7 @@ LOG_CHANNEL = int(environ.get("LOG_CHANNEL", None))
 DATABASE_URI = environ.get("DATABASE_URI", None)
 FORCE = environ.get('FORCES_SUB')
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", DarkSnyder.FILE_CAPTIONS)
-DEV_NAME = environ.get("DEV_NAME", "nivedh")
+
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
 AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
@@ -31,16 +31,41 @@ auth_users = [int(user) if id_pattern.search(user) else user for user in environ
 
 
 # ==================================
-# Empty 😂
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-BUTTONS = {}
-CURRENT = int(environ.get("SKIP", 2))
-CANCEL = False
-FORCES_SUB = int(FORCE) if FORCE and id_pattern.search(FORCE) else FORCE
-DATABASE_NAME = environ.get("DATABASE_NAME", 'DarkSnyder_Robot')
-AUTH_USERS = (auth_users + ADMINS) if auth_users else []
+# Others
+
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
+
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TeamEvamaria')
+
+P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
+
+IMDB = is_enabled((environ.get('IMDB', "True")), True)
+
+SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")), False)
+
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", None)
+
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
+
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query: {query}</b> \n‌‌‌‌IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10")
+
+LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
+
+SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
+
+MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
+
+INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
+
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
+
+MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
+
+PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
+
+PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
+
+
 # ==================================
 # About Bot 🤖
 class bot_info(object):
