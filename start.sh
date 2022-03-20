@@ -1,7 +1,7 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/Nivedhhm/LuciferMoringstar-Robot/DarkSnyder-Robot
+  git clone https://github.com/Nivedhhm/DarkSnyder-Robot/DarkSnyder-Robot
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
   git clone $UPSTREAM_REPO /DarkSnyder-Robot
