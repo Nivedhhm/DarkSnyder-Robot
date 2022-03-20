@@ -2,7 +2,7 @@
 </p>
 
 <p align="center">
-   <img src="assets/logo.jpg" alt="Dark Snyder Logo">
+   .<img src="assets/logo.jpg" alt="Dark Snyder Logo">
   <a >DARK SNYDER_BOT</a>
 </p>
 
