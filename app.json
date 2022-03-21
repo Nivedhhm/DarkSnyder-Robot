@@ -11,8 +11,8 @@
       "filter",
       "bot"
     ],
-    "website": "https://youtube.com/c/MoTech_YT",
-    "repository": "https://github.com/Nivedhhm/LuciferMoringstar-Robot",
+    "website": "https://github.com/Nivedhhm/DarkSnyder-Robot",
+    "repository": "https://github.com/Nivedhhm/DarkSnyder-Robot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot Token From https://youtu.be/cB4UduCcNWs",
