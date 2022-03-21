@@ -1,6 +1,6 @@
 import logging
-from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
-from LuciferMoringstar_Robot.database.autofilter_db import Media
+from pyrogram import Client as Darksnyder_Robot, filters as Worker
+from Darksnyder_Robot.database.autofilter_db import Media
 from config import ADMINS
 logger = logging.getLogger(__name__)
 
